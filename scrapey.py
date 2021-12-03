@@ -6,7 +6,7 @@ except :
     from BeautifulSoup import BeautifulSoup
 import requests
 
-st.title("Link Scraper")
+st.title("Link Checker")
 
 
 def show():
