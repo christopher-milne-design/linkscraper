@@ -1,13 +1,15 @@
 # Import libraries
 import streamlit as st
-from bs4 import BeautifulSoup, SoupStrainer
+from bs4 import BeautifulSoup
 import requests
 
-st.title("LinkScraper")
+st.title("Link Scraper")
+
+
 def show():
 
     # Prompt user to enter the URL
-    url = st.text_input(value="Enter your url: ",label="Input")
+    url = st.text_input(value="https://canadacouncil.ca/", label="Input url below")
 
     # Make a request to get the URL
     page = requests.get(url)
@@ -23,7 +25,7 @@ def show():
 
     # Iterate over all links on the given URL with the response code next to it
     for link in soup.find_all('a'):
-         st.write(f"Url: {link.get('href')} " + f"| Status Code: {response_code}")
+      st.write(f"Url: {link.get('href')} " + f"| Status Code: {response_code}")
 
 if __name__ == "__main__":
     show()
