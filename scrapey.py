@@ -15,7 +15,7 @@ def show():
     url = st.text_input(value="https://canadacouncil.ca/", label="Input url below")
 
     # Make a request to get the URL
-    page = requests.get(url)
+    page = requests.get(url, allow_redirects=False)
 
     # Get the response code of given URL
     response_code = str(page.status_code)
