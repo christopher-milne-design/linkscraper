@@ -12,7 +12,7 @@ st.title("Link Checker")
 def show():
 
     # Prompt user to enter the URL
-    url = st.text_input(value="https://canadacouncil.ca/", label="Input url below")
+    url = st.text_input(value="https://canadacouncil.ca/", label="Input URL below")
 
     # Make a request to get the URL
     page = requests.get(url, allow_redirects=False)
